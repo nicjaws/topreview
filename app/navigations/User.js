@@ -1,9 +1,11 @@
 import React from 'react';
 import {
-    createStackNavigator,
-    createAppContainer, 
-    createBottomTabNavigator
+    createAppContainer
 } from "react-navigation";
+
+import {createStackNavigator} from 'react-navigation-stack';
+
+import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 // Screens
 import HomeScreen from "../screens/Home";
@@ -13,35 +15,33 @@ import MyAccountScreen from "../screens/MyAccount";
 
 
 const homeScreenStack = createStackNavigator({
-    HomeScreen: {
-        screen: Home,
+    Home: {
+        screen: HomeScreen,
         navigationOptions: ({ navigation }) => ({
             title: "Home"
         })
     }
 });
-
+const topFiveScreenStack = createStackNavigator({
+    TopFive: {
+        screen: TopFiveScreen,
+        navigationOptions: ({ navigation }) => ({
+            title: "Top 5 products"
+        })
+    }
+});
 const searchScreenStack = createStackNavigator({
-    HomeScreen: {
-        screen: Search,
+    Search: {
+        screen: SearchScreen,
         navigationOptions: ({ navigation }) => ({
             title: "Search"
         })
     }
 });
 
-const topFiveScreenStack = createStackNavigator({
-    HomeScreen: {
-        screen: TopFive,
-        navigationOptions: ({ navigation }) => ({
-            title: "Top 5 products"
-        })
-    }
-});
-
 const myAccountScreenStack = createStackNavigator({
-    HomeScreen: {
-        screen: MyAccount,
+    MyAccount: {
+        screen: MyAccountScreen,
         navigationOptions: ({ navigation }) => ({
             title: "MyAccount"
         })
@@ -49,7 +49,7 @@ const myAccountScreenStack = createStackNavigator({
 });
 
 const RootStack = createBottomTabNavigator({
-    HomeScreen: {
+    Home: {
         screen: homeScreenStack
     }
 });
