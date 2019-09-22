@@ -12,7 +12,9 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 import HomeScreen from "../screens/Home";
 import TopFiveScreen from "../screens/TopFive";
 import SearchScreen from "../screens/Search";
-import MyAccountScreen from "../screens/MyAccount";
+// Screens MyAccount
+import MyAccountScreen from "../screens/MyAccount/MyAccount";
+import RegisterScreen from '../screens/MyAccount/Register'
 
 
 const homeScreenStack = createStackNavigator({
@@ -46,7 +48,14 @@ const myAccountScreenStack = createStackNavigator({
         navigationOptions: ({ navigation }) => ({
             title: "MyAccount"
         })
+    },
+    Register: {
+        screen: RegisterScreen, 
+        navigationOptions: ({navigation}) => ({
+            title: "Register"
+        })
     }
+
 });
 
 const RootStack = createBottomTabNavigator({
@@ -92,9 +101,25 @@ const RootStack = createBottomTabNavigator({
                 />
             )
         })
+    },
+    MyAccount: {
+        screen: myAccountScreenStack,
+        navigationOptions: ({navigation}) => ({
+            tabBarLabel: "My Account",
+            tabBarIcon: ({tintColor}) => (
+                <Icon 
+                name='home-outline'
+                type="material-community"
+                size={22}
+                color={tintColor}  
+                />
+            )
+        })
     }
 }, 
 {
+    initialRouteName: "MyAccount",
+    order: ["Home", "TopFive", "Search", "MyAccount"],
     tabBarOptions: {
        inactiveTintColor: "#646464",
        activeTintColor: "#00a680"
