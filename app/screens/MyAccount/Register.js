@@ -3,6 +3,8 @@ import {StyleSheet, View, Text} from "react-native";
 
 import t from 'tcomb-form-native'; 
 const Form = t.form.Form;
+import { RegisterStruct, RegisterOptions } from "../../forms/Register";
+
 
 export default class Register extends Component {
     render() {
