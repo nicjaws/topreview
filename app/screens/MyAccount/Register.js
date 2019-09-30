@@ -1,8 +1,10 @@
 import React, {Component} from "react"; 
 import {StyleSheet, View, Text} from "react-native";
 
-import {t} from "tcomb-form-native"; 
-const Form = t.form.Form; import { RegisterStruct, RegisterOptions } from "../../forms/Register";
+import t from "tcomb-form-native"; 
+const Form = t.form.Form; 
+
+import { RegisterStruct, RegisterOptions } from "../../forms/Register";
 
 
 export default class Register extends Component {
@@ -27,7 +29,6 @@ export default class Register extends Component {
                     type={registerStruct}
                     options={registerOptions}
                 />
->
             </View>
         )
     }
