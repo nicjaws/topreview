@@ -22,7 +22,6 @@ export default class Register extends Component {
 
         return (
             <View style={styles.viewBody}>
-                <Text>Register Screen...</Text>
 
                 <Form
                     ref="registerForm"
@@ -37,8 +36,9 @@ export default class Register extends Component {
 const styles = StyleSheet.create({
     viewBody: {
         flex: 1,
-        alignItems: 'center',
         justifyContent: "center",
-        backgroundColor: "#fff", 
+        marginLeft: 40,
+        marginRight: 40
+         
     }
 })
