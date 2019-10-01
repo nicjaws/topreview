@@ -1,5 +1,6 @@
 import React, {Component} from "react"; 
-import {StyleSheet, View, Text} from "react-native";
+import {StyleSheet, View} from "react-native";
+import { Button } from 'react-native-elements';
 
 import t from "tcomb-form-native"; 
 const Form = t.form.Form; 
@@ -16,6 +17,10 @@ export default class Register extends Component {
             registerOptions: RegisterOptions
         }
     }
+
+    register = () => {
+        console.log("intento de registro")
+    }
     render() {
 
         const { registerStruct, registerOptions } = this.state
@@ -28,6 +33,7 @@ export default class Register extends Component {
                     type={registerStruct}
                     options={registerOptions}
                 />
+                <Button title="Join us" onPress={() => this.register()}/>
             </View>
         )
     }
