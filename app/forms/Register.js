@@ -15,28 +15,40 @@ export const RegisterOptions = {
    fields: {
        name: {
            label:"Name (*)",
-           placeholder: "Write name and lastname",
-           error: "Invalid name",
-           template: inputTemplate
+           template: inputTemplate,
+           config: {
+            placeholder: "Write firstname and lastname",
+            iconType: "material-community",
+            iconName: "account-outline"
+           }
        },
        email: {
-           label: "Email (*)",
-           placeholder: "Write your email",
-           error: "Invalid email"
+        template: inputTemplate,
+        config: {
+         placeholder: "Write your email",
+         iconType: "material-community",
+         iconName: "at"
+        }
        },
        password: {
-           label: "Password (*)",
-           placeholder: "Write your password",
-           error: "Invalid password",
-           password: true,
-           secureTextEntry: true
+        template: inputTemplate,
+        config: {
+         placeholder: "Write your password",
+         iconType: "material-community",
+         iconName: "lock-outline",
+         password: true,
+         secureTextEntry: true
+        }  
        },
        passwordConfirmation: {
-           label: "Repeat password",
-           placeholder: "Repeat your password",
-           error: "Invalid password",
-           password: true,
-           secureTextEntry: true
+        template: inputTemplate,
+        config: {
+         placeholder: "Repeat your password",
+         iconType: "material-community",
+         iconName: "lock-reset",
+         password: true,
+         secureTextEntry: true
+        }  
        }
    } 
 }
