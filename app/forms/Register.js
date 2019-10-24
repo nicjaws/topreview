@@ -2,6 +2,7 @@ import React from 'react'
 
 import t from "tcomb-form-native";
 import formValidation from "../utils/Validation";
+import inputTemplate from './templates/Input'; 
 
 export const RegisterStruct = t.struct({
     name: t.String,
@@ -14,8 +15,9 @@ export const RegisterOptions = {
    fields: {
        name: {
            label:"Name (*)",
-           placeholder: "Write name and surname",
-           error: "Invalid name"
+           placeholder: "Write name and lastname",
+           error: "Invalid name",
+           template: inputTemplate
        },
        email: {
            label: "Email (*)",
