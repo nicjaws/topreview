@@ -31,7 +31,7 @@ export default class Register extends Component {
             const validate = this.refs.registerForm.getValue();
 
             if(validate){
-                console.log("Correct formular");
+                this.setState({ formErrorMessage: "" })
             } else {
                 this.setState({
                     formErrorMessage: 'Incorrect formular' 

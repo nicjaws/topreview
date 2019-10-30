@@ -15,6 +15,7 @@ export default (inputTemplate = locals => {
                   size={24}
                   />
             } 
+            onChangeText={value => locals.onChange(value)}
             />
         </View>
     )
