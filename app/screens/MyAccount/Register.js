@@ -1,6 +1,7 @@
 import React, {Component} from "react"; 
 import {StyleSheet, View} from "react-native";
 import { Button, Text } from 'react-native-elements';
+import Toast, { DURATION } from 'react-native-easy-toast';
 
 import t from "tcomb-form-native"; 
 const Form = t.form.Form; 
@@ -27,6 +28,9 @@ export default class Register extends Component {
     }
 
     register = () => {
+        this.refs.toast.show('Email is already in use', 1500, () => {
+            
+        });
         const {password, passwordConfirmation } = this.state.formData;
 
         if(password === passwordConfirmation) {
@@ -77,6 +81,15 @@ export default class Register extends Component {
                 <Text style={styles.formErrorMessage}>
                 {formErrorMessage}
                 </Text> 
+                <Toast
+                    ref="toast"
+                    position='bottom'
+                    positionValue={250}
+                    fadeInDuration={750}
+                    fadeOutDuration={1000}
+                    opacity={0.8}
+                    textStyle={{color:'#fff'}}
+                />
             </View>
         )
     }
