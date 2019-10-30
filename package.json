@@ -11,6 +11,7 @@
   "dependencies": {
     "@shoutem/ui": "^0.23.12",
     "expo": "^34.0.1",
+    "firebase": "^7.2.2",
     "react": "16.6.3",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
