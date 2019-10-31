@@ -1,3 +1,6 @@
-Kind of tripadvisor but this one is with products for everyday life you can find everywhere like supermarkts, etc
+App done with React Native.
 
-![Screenshot](login_screen.png)
+It is a kind of tripadvisor but this one is related with products for everyday life. You can find them everywhere like supermarkts, etc and upload your review abou them
+
+![Screenshot](/assets/login_screen.png)
+Format: ![Alt Text](url)
