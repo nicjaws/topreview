@@ -28,7 +28,7 @@ export default class Register extends Component {
     }
 
     register = () => {
-        this.refs.toast.show('Email is already in use', 1500, () => {
+        this.refs.toast.show('Email is already in use', 2500, () => {
             
         });
         const {password, passwordConfirmation } = this.state.formData;
