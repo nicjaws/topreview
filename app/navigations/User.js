@@ -12,6 +12,7 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 import HomeScreen from "../screens/Home";
 import TopFiveScreen from "../screens/TopFive";
 import SearchScreen from "../screens/Search";
+import LoginScreen from '../screens/MyAccount/Login';
 // Screens MyAccount
 import MyAccountScreen from "../screens/MyAccount/MyAccount";
 import RegisterScreen from '../screens/MyAccount/Register'
@@ -53,6 +54,12 @@ const myAccountScreenStack = createStackNavigator({
         screen: RegisterScreen, 
         navigationOptions: ({navigation}) => ({
             title: "Register"
+        })
+    },
+    Login: {
+        screen: LoginScreen, 
+        navigationOptions: ({navigation}) => ({
+            title: "Login"
         })
     }
 

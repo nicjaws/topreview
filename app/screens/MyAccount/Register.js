@@ -28,9 +28,7 @@ export default class Register extends Component {
     }
 
     register = () => {
-        this.refs.toast.show('Email is already in use', 2500, () => {
-            
-        });
+        
         const {password, passwordConfirmation } = this.state.formData;
 
         if(password === passwordConfirmation) {
@@ -39,18 +37,22 @@ export default class Register extends Component {
             if(validate){
                 this.setState({ formErrorMessage: "" });
                 firebase.auth().createUserWithEmailAndPassword(validate.email, validate.password).then(resolve => {
-                    console.log('Register succesfull')
+                    this.refs.toast.show('Register OK', 500, () => {
+                        this.props.navigation.goBack();
+                    });
                 }).catch(err => {
-                    console.log('Email already in use')
+                    this.refs.toast.show('Email is already in use', 2500, () => {
+            
+                    });
                 })
             } else {
                 this.setState({
-                    formErrorMessage: 'Incorrect formular' 
+                    formErrorMessage: 'Passwords are not the same' 
                 });
             }
         } else {
             this.setState({
-                formErrorMessage: 'Passwords are not the same' 
+                formErrorMessage: 'Incorrect formular' 
             });
         }
 
@@ -85,7 +87,7 @@ export default class Register extends Component {
                     ref="toast"
                     position='bottom'
                     positionValue={250}
-                    fadeInDuration={750}
+                    fadeInDuration={1000}
                     fadeOutDuration={1000}
                     opacity={0.8}
                     textStyle={{color:'#fff'}}

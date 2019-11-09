@@ -1,6 +1,7 @@
 import React, {Component} from "react"; 
 import {StyleSheet, View, Text} from "react-native";
 import  { Button } from 'react-native-elements';
+import Login from './Login';
 
 export default class MyAccount extends Component {
 
@@ -13,6 +14,7 @@ export default class MyAccount extends Component {
             <View style={styles.viewBody}>
                 <Text>MyAccount Screen...</Text>
                 <Button title="Register" onPress={()=> this.goToScreen("Register")}></Button>
+                <Button title="Login" onPress={()=> this.goToScreen("Login")}></Button>
             </View>
         )
     }
